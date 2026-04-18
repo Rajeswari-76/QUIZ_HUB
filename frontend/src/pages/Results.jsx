@@ -58,7 +58,7 @@ const Results = () => {
     <div className="container animate-fade-in" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
       <div className="glass-panel" style={{ padding: '4rem', textAlign: 'center', maxWidth: '600px', width: '100%' }}>
         <Trophy size={64} className="text-gradient" style={{ margin: '0 auto 2rem auto' }} />
-        
+
         <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Quiz Completed!</h1>
         <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
           You completed the {activeQuiz.topic} quiz.
@@ -73,13 +73,11 @@ const Results = () => {
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '3rem' }}>
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '3rem', background: "black", color: "white" }}>
           <button className="btn btn-secondary" onClick={() => { endQuiz(); navigate('/'); }}>
             <Home size={20} /> Home
           </button>
         </div>
-
-        <Leaderboard topic={activeQuiz.topic} />
       </div>
     </div>
   );

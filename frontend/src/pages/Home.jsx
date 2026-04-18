@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import CategorySelector from '../components/CategorySelector';
-import Leaderboard from '../components/Leaderboard';
 import { useQuiz } from '../context/QuizContext';
 import { Loader2 } from 'lucide-react';
 
@@ -39,26 +38,20 @@ const Home = () => {
           Test Your Knowledge with <span className="text-gradient">AI</span>
         </h1>
         <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
-          Select a topic below and let our AI generate a custom 10-question quiz just for you. Compete on the leaderboard!
+          Select a topic below and let our AI generate a custom 10-question quiz just for you.
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '2rem', marginTop: '3rem' }}>
-        <div>
-          <h2 style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>Select a Topic</h2>
-          {loading ? (
-            <div className="glass-panel" style={{ padding: '4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-              <Loader2 size={48} className="animate-pulse text-accent" style={{ animation: 'spin 1s linear infinite' }} />
-              <h3>Generating Quiz with AI...</h3>
-            </div>
-          ) : (
-            <CategorySelector onSelect={handleSelectCategory} />
-          )}
-        </div>
-        
-        <div>
-          <Leaderboard />
-        </div>
+      <div style={{ marginTop: '3rem' }}>
+        <h2 style={{ fontSize: '1.75rem', marginBottom: '1rem', textAlign: 'center' }}>Select a Topic</h2>
+        {loading ? (
+          <div className="glass-panel" style={{ padding: '4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+            <Loader2 size={48} className="animate-pulse text-accent" style={{ animation: 'spin 1s linear infinite' }} />
+            <h3>Generating Quiz with AI...</h3>
+          </div>
+        ) : (
+          <CategorySelector onSelect={handleSelectCategory} />
+        )}
       </div>
     </div>
   );

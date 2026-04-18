@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Globe, Zap, Database, Atom, Blocks } from 'lucide-react';
+import { Code, Globe, Zap, Database, Atom, Blocks, Terminal, Layout, Box } from 'lucide-react';
 
 const defaultCategories = [
   { id: 'react', name: 'React.js', icon: <Atom size={24} /> },
@@ -8,6 +8,9 @@ const defaultCategories = [
   { id: 'mongodb', name: 'MongoDB', icon: <Database size={24} /> },
   { id: 'web', name: 'Web Fundamentals', icon: <Globe size={24} /> },
   { id: 'ai', name: 'Artificial Intelligence', icon: <Zap size={24} /> },
+  { id: 'python', name: 'Python', icon: <Terminal size={24} /> },
+  { id: 'css', name: 'CSS Styling', icon: <Layout size={24} /> },
+  { id: 'docker', name: 'Docker', icon: <Box size={24} /> },
 ];
 
 const CategorySelector = ({ onSelect }) => {
